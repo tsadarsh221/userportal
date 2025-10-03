@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Bus Tracker</h1>
+            <a href="admin.html" class="admin-link">Admin Panel</a>
+        </div>
+        
+        <div class="search-form">
+            <select id="busType">
+                <option value="">Select Bus Type</option>
+                <option value="Public">Public</option>
+                <option value="Private">Private</option>
+            </select>
+            <select id="sourceStop">
+                <option value="">Select Source</option>
+            </select>
+            <select id="destinationStop">
+                <option value="">Select Destination</option>
+            </select>
+            <button id="findBusBtn">Find Bus</button>
+        </div>
+
+        <hr>
+
+        <div id="results">
+            <h2>Available Buses</h2>
+            <div id="busList">
+                <p>Please select your route to see available buses.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
