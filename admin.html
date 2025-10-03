@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container" id="admin-container">
+        <div id="loginView">
+            <h1>Admin Login</h1>
+            <input type="email" id="adminEmail" placeholder="Admin Email">
+            <input type="password" id="adminPassword" placeholder="Password">
+            <button id="adminLoginBtn">Login</button>
+            <p id="adminError" class="error"></p>
+        </div>
+
+        <div id="dashboardView" style="display:none;">
+            <h1>Admin Dashboard</h1>
+            <p>Welcome, <span id="adminUserEmail"></span>! <button id="adminLogoutBtn">Logout</button></p>
+            <hr>
+            <h2>Add New Bus Route</h2>
+            <form id="addBusForm">
+                <select id="newBusType" required>
+                    <option value="">-- Bus Type --</option>
+                    <option value="Public">Public</option>
+                    <option value="Private">Private</option>
+                </select>
+                <input type="text" id="busName" placeholder="Bus Name (e.g., Kallada)" required>
+                <input type="text" id="busNumber" placeholder="Bus Number (e.g., KL 08 AB 1234)" required>
+                <input type="text" id="driverId" placeholder="Assigned Driver User ID" required>
+                <input type="text" id="source" placeholder="Source" required>
+                <input type="text" id="stop1" placeholder="Intermediate Stop 1" required>
+                <input type="text" id="stop2" placeholder="Intermediate Stop 2" required>
+                <input type="text" id="stop3" placeholder="Intermediate Stop 3" required>
+                <input type="text" id="destination" placeholder="Destination" required>
+                <button type="submit">Add Bus</button>
+            </form>
+            <p id="formStatus"></p>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>
