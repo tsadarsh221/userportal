@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Bus Tracker - Leaflet</title>
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.css" />
+    
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        #map { height: 500px; width: 100%; margin-top: 20px; border-radius: 8px; }
+        .container { max-width: 800px; }
+        /* Hide the default routing instructions panel */
+        .leaflet-routing-container { display: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Live Bus Tracker 🗺️</h1>
+        <div id="tracker-info">
+            <p><strong>Bus:</strong> <span id="busName"></span> (<span id="busNumber"></span>)</p>
+            <p><strong>Your Stop:</strong> <span id="userStop"></span></p>
+            <p><strong>Estimated Arrival:</strong> <span id="eta">Calculating...</span></p>
+        </div>
+        <div id="map"></div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.js"></script>
+
+    <script src="tracker.js"></script>
+</body>
+</html>
